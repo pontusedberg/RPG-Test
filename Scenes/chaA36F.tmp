@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://ou2tiigwlbxd"]
+
+[ext_resource type="Script" path="res://Scenes/character.gd" id="1_jl5k1"]
+[ext_resource type="Script" path="res://Resources/Stats.gd" id="1_lh8o8"]
+[ext_resource type="Texture2D" uid="uid://bgg3w5js5dfwg" path="res://Texture/Character/Mainchar1.png" id="1_rr23i"]
+[ext_resource type="Script" path="res://Resources/DamageType.gd" id="3_2guib"]
+[ext_resource type="Script" path="res://Resources/Attack.gd" id="4_hqtx0"]
+
+[sub_resource type="Resource" id="Resource_jw4k0"]
+script = ExtResource("1_lh8o8")
+Name = ""
+CircumstanceBonus = []
+ItemBonus = []
+StatusBonus = []
+penalties = 0
+Max_health = 1
+Health = 1
+Speed = 0
+Proficiency = null
+Strength = 1
+Dexterity = 1
+Constitution = 1
+Intelligence = 1
+Wisdom = 1
+Charisma = 1
+AC = null
+FortitudeDC = null
+ReflexDC = null
+WillDC = null
+FortitudeSave = null
+ReflexSave = null
+WillSave = null
+
+[sub_resource type="Resource" id="Resource_lumxn"]
+script = ExtResource("3_2guib")
+PhysicalDamage = []
+EnergyDamage = []
+SpiritDamage = false
+MentalDamage = false
+PoisonDamage = false
+BleedDamage = 0
+PrecisionDamage = 0
+PreciousMaterials = []
+Bludgeoning = 0
+Slashing = 0
+Piercing = 0
+Acid = 0
+Cold = 0
+Electricity = 0
+Fire = 0
+Sonic = 0
+
+[sub_resource type="Resource" id="Resource_a0ree"]
+script = ExtResource("4_hqtx0")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r16nk"]
+size = Vector2(16, 16)
+
+[node name="Character" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_jl5k1")
+stats = SubResource("Resource_jw4k0")
+damagetype = SubResource("Resource_lumxn")
+attack = SubResource("Resource_a0ree")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_r16nk")
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rr23i")
