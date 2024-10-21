@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://ou2tiigwlbxd"]
+
+[ext_resource type="Script" path="res://Scripts/Character/character.gd" id="1_jl5k1"]
+[ext_resource type="Texture2D" uid="uid://bgg3w5js5dfwg" path="res://Texture/Character/Mainchar1.png" id="1_rr23i"]
+[ext_resource type="Script" path="res://Resources/Stats.gd" id="2_wtt3t"]
+[ext_resource type="Script" path="res://Resources/DamageType.gd" id="3_bhwxn"]
+
+[sub_resource type="Resource" id="Resource_32vsv"]
+script = ExtResource("2_wtt3t")
+Name = ""
+CircumstanceBonus = null
+ItemBonus = null
+StatusBonus = null
+penalties = 0
+Max_health = 100
+Health = 100
+Speed = 100
+Level = 1
+Strength = 10
+Dexterity = 10
+Constitution = 10
+Intelligence = 10
+Wisdom = 10
+Charisma = 10
+FortitudeDC = null
+ReflexDC = null
+WillDC = null
+
+[sub_resource type="Resource" id="Resource_ruwfk"]
+script = ExtResource("3_bhwxn")
+PhysicalDamage = []
+EnergyDamage = []
+SpiritDamage = false
+MentalDamage = false
+PoisonDamage = false
+BleedDamage = 0
+PrecisionDamage = 0
+PreciousMaterials = []
+Bludgeoning = 0
+Slashing = 0
+Piercing = 0
+Acid = 0
+Cold = 0
+Electricity = 0
+Fire = 0
+Sonic = 0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yd8qd"]
+radius = 7.07107
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntnca"]
+
+[node name="Character" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_jl5k1")
+stats = SubResource("Resource_32vsv")
+damagetype = SubResource("Resource_ruwfk")
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rr23i")
+
+[node name="HurtBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yd8qd")
+
+[node name="MeleAttack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleAttack"]
+shape = SubResource("RectangleShape2D_ntnca")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0

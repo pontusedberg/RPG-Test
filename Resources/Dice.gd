@@ -1,5 +1,5 @@
 extends Resource
-class_name Dice
+class_name Dices
 var rng = RandomNumberGenerator.new()
 
 @export var D20: int = (rng.randi() % 20 + 1)

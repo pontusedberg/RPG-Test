@@ -1,5 +1,8 @@
 extends Resource
 class_name Stats
+func _ready() -> void:
+	GlobalScript.number
+
 var dice : Dice
 
 @export var Name: String
@@ -15,7 +18,6 @@ func get_highest_bonus(bonuses: Array) -> int:
 	if bonuses.size() > 0:
 		return max(bonuses)
 	return 0
-
 func get_total_bonus() -> int:
 	var total_bonus = 0
 	# Get highest bonus from each category
@@ -27,8 +29,6 @@ func get_total_bonus() -> int:
 	total_bonus += highest_item
 	total_bonus += highest_status
 	return total_bonus
-
-
 #Penalties
 @export var penalties: int
 
@@ -44,12 +44,14 @@ var Trained: int = 2
 var Expert: int = 4
 var Master: int = 6
 var Legendary: int = 8
-var Trainedstats = [Untrained, Trained, Expert, Master, Legendary]
+var Trainedstats: Array = [Untrained, Trained, Expert, Master, Legendary]
 
 # Proficiency based on current level and training
-@export var Proficiency: int = Level + Trainedstats[0]  # Set to Untrained by default
+#Proficiency: int = Level + Trainedstats[0]  # Set to Untrained by default
 
-
+func CalcProficiency() -> int:
+	return Level + Trainedstats[0] 
+var Proficiency: int = CalcProficiency()
 # Ability scores
 @export var Strength: int = 0
 @export var Dexterity: int = 0
@@ -59,20 +61,36 @@ var Trainedstats = [Untrained, Trained, Expert, Master, Legendary]
 @export var Charisma: int = 0
 var AbilityScores = [Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma]
 
+#////////////////////////////////////////////////
 #Defenses
-@export var AC: int = 10 + Dexterity+ Proficiency
-@export var FortitudeDC: int = 10 + Constitution + Proficiency
-@export var ReflexDC: int = 10 + Dexterity + Proficiency
-@export var WillDC: int = 10 + Wisdom + Proficiency 
 
+#AC: int = 10 + Proficiency + Dexterity
+func CalcAC(Proficiency)-> int:	
+	return 10 + Proficiency + Dexterity
+var AC:int = CalcAC(Proficiency)
+
+#FortitudeDC: int = 10 + Proficiency+ Constitution
+func CalcFortitudeDC(Proficiency)-> int:
+	return 10 + Proficiency + Constitution
+@export var FortitudeDC: int = CalcFortitudeDC(Proficiency)
+
+#ReflexDC: int = 10 + Proficiency+ Dexterity
+func CalcReflexDC(Proficiency)-> int:
+	return 10 + Proficiency+ Dexterity
+@export var ReflexDC: int = CalcReflexDC(Proficiency)
+
+#WillDC: int = 10 + Wisdom + Proficiency
+func CalcWillDC(Proficiency)->int:
+	return 10 + Proficiency + Wisdom
+@export var WillDC: int = CalcWillDC(Proficiency)
+#///////////////////////////////////////////
 #Savingthrow
-@export var FortitudeSave: int =  Constitution + Proficiency
-@export var ReflexSave: int = Dexterity + Proficiency
-@export var WillSave: int  =  Wisdom + Proficiency
-
-@export var test: int
-# Function to get the highest of a given set of bonuses
-
-
-# Function to calculate total bonuses
-# Adds the highest Circumstance, Item, and Status bonuses
+#FortitudeSave: int =  Constitution + Proficiency
+func FortitudeSave(Proficiency) -> int:
+	return Proficiency + Constitution 
+#ReflexSave: int = Dexterity + Proficiency
+func ReflexSave(Proficiency) -> int:
+	return Proficiency+Dexterity
+#WillSave: int  =  Wisdom + Proficiency
+func WillSave(Proficiency) -> int:
+	return Proficiency + Wisdom
