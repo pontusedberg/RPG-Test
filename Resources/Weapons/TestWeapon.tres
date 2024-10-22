@@ -1,0 +1,43 @@
+[gd_resource type="Resource" script_class="Weapons" load_steps=7 format=3 uid="uid://tn7avnnuqlcs"]
+
+[ext_resource type="Script" path="res://Resources/DamageType.gd" id="1_ruh6u"]
+[ext_resource type="Texture2D" uid="uid://dhkr6puvqjibf" path="res://Texture/Sword.png" id="2_yra04"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Weapons.gd" id="3_8shsc"]
+[ext_resource type="Script" path="res://Test/Dice.gd" id="4_in1u3"]
+
+[sub_resource type="Resource" id="Resource_dnx1g"]
+script = ExtResource("1_ruh6u")
+PhysicalDamage = []
+EnergyDamage = []
+SpiritDamage = false
+MentalDamage = false
+PoisonDamage = false
+BleedDamage = 0
+PrecisionDamage = 0
+PreciousMaterials = []
+Bludgeoning = 0
+Slashing = 5
+Piercing = 0
+Acid = 0
+Cold = 0
+Electricity = 0
+Fire = 0
+Sonic = 0
+
+[sub_resource type="Resource" id="Resource_5njk3"]
+script = ExtResource("4_in1u3")
+D20 = null
+D12 = null
+D10 = null
+D8 = 1
+D6 = null
+D4 = null
+
+[resource]
+script = ExtResource("3_8shsc")
+damage_type = SubResource("Resource_dnx1g")
+weapon_damage_die = SubResource("Resource_5njk3")
+name = "Sword"
+texture = ExtResource("2_yra04")
+icon = ExtResource("2_yra04")
+projectile = 0

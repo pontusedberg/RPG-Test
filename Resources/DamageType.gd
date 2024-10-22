@@ -16,11 +16,11 @@ class_name DamageType
 @export var Piercing : int
 
 #EnergyDamage
-@export var Acid : int
-@export var Cold : int
-@export var Electricity : int
-@export var Fire : int
-@export var Sonic : int
+@export var Acid: int
+@export var Cold: int
+@export var Electricity: int
+@export var Fire: int = 0
+@export var Sonic: int
 
 #PreciousMaterials
 var silver : int

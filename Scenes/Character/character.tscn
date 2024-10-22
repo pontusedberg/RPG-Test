@@ -1,11 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://ou2tiigwlbxd"]
+[gd_scene load_steps=15 format=3 uid="uid://ou2tiigwlbxd"]
 
 [ext_resource type="Script" path="res://Scripts/Character/character.gd" id="1_jl5k1"]
 [ext_resource type="Texture2D" uid="uid://bgg3w5js5dfwg" path="res://Texture/Character/Mainchar1.png" id="1_rr23i"]
 [ext_resource type="Script" path="res://Resources/Stats.gd" id="2_wtt3t"]
-[ext_resource type="Script" path="res://Resources/DamageType.gd" id="3_bhwxn"]
+[ext_resource type="Script" path="res://Resources/DamageType.gd" id="3_nqhw4"]
+[ext_resource type="Texture2D" uid="uid://dhkr6puvqjibf" path="res://Texture/Sword.png" id="4_myf4q"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Weapons.gd" id="5_5hky7"]
+[ext_resource type="Script" path="res://Test/Dice.gd" id="6_rm21c"]
+[ext_resource type="Script" path="res://Scripts/Attack/MyHurtBox.gd" id="7_4aowr"]
 
-[sub_resource type="Resource" id="Resource_32vsv"]
+[sub_resource type="Resource" id="Resource_lnfln"]
 script = ExtResource("2_wtt3t")
 Name = ""
 CircumstanceBonus = null
@@ -14,20 +18,22 @@ StatusBonus = null
 penalties = 0
 Max_health = 100
 Health = 100
-Speed = 100
-Level = 1
-Strength = 10
-Dexterity = 10
-Constitution = 10
-Intelligence = 10
-Wisdom = 10
-Charisma = 10
+Speed = 300
+Level = 5
+Proficiency = null
+Strength = 12
+Dexterity = 12
+Constitution = 12
+Intelligence = 12
+Wisdom = 12
+Charisma = 12
+AC = null
 FortitudeDC = null
 ReflexDC = null
 WillDC = null
 
-[sub_resource type="Resource" id="Resource_ruwfk"]
-script = ExtResource("3_bhwxn")
+[sub_resource type="Resource" id="Resource_dnx1g"]
+script = ExtResource("3_nqhw4")
 PhysicalDamage = []
 EnergyDamage = []
 SpiritDamage = false
@@ -45,30 +51,51 @@ Electricity = 0
 Fire = 0
 Sonic = 0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_yd8qd"]
-radius = 7.07107
+[sub_resource type="Resource" id="Resource_5njk3"]
+script = ExtResource("6_rm21c")
+D20 = null
+D12 = null
+D10 = null
+D8 = 1
+D6 = null
+D4 = null
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntnca"]
+[sub_resource type="Resource" id="Resource_x3el2"]
+script = ExtResource("5_5hky7")
+damage_type = SubResource("Resource_dnx1g")
+weapon_damage_die = SubResource("Resource_5njk3")
+name = "Sword"
+texture = ExtResource("4_myf4q")
+icon = ExtResource("4_myf4q")
+projectile = 0
 
-[node name="Character" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kapju"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gntqf"]
+
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("progress_bar", "hurtbox")]
 motion_mode = 1
 script = ExtResource("1_jl5k1")
-stats = SubResource("Resource_32vsv")
-damagetype = SubResource("Resource_ruwfk")
+stats = SubResource("Resource_lnfln")
+progress_bar = NodePath("ProgressBar")
+hurtbox = NodePath("MyHurtBox/CollisionShape2D")
+current_weapon = SubResource("Resource_x3el2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kapju")
 
 [node name="Character" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rr23i")
 
-[node name="HurtBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_yd8qd")
-
-[node name="MeleAttack" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleAttack"]
-shape = SubResource("RectangleShape2D_ntnca")
-
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_right = 4.0
 offset_bottom = 27.0
+
+[node name="MyHurtBox" type="Area2D" parent="."]
+script = ExtResource("7_4aowr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox"]
+shape = SubResource("CircleShape2D_gntqf")

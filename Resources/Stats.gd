@@ -51,14 +51,14 @@ var Trainedstats: Array = [Untrained, Trained, Expert, Master, Legendary]
 
 func CalcProficiency() -> int:
 	return Level + Trainedstats[0] 
-var Proficiency: int = CalcProficiency()
+@export var Proficiency: int = CalcProficiency()
 # Ability scores
-@export var Strength: int = 0
-@export var Dexterity: int = 0
-@export var Constitution: int = 0
-@export var Intelligence: int = 0
-@export var Wisdom: int = 0
-@export var Charisma: int = 0
+@export var Strength: int
+@export var Dexterity: int
+@export var Constitution: int
+@export var Intelligence: int
+@export var Wisdom: int
+@export var Charisma: int
 var AbilityScores = [Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma]
 
 #////////////////////////////////////////////////
@@ -67,7 +67,7 @@ var AbilityScores = [Strength,Dexterity,Constitution,Intelligence,Wisdom,Charism
 #AC: int = 10 + Proficiency + Dexterity
 func CalcAC(Proficiency)-> int:	
 	return 10 + Proficiency + Dexterity
-var AC:int = CalcAC(Proficiency)
+@export var AC:int = CalcAC(Proficiency)
 
 #FortitudeDC: int = 10 + Proficiency+ Constitution
 func CalcFortitudeDC(Proficiency)-> int:

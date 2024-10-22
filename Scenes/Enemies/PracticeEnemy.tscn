@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://d6qyrowl8d3o"]
+
+[ext_resource type="Script" path="res://Scripts/Attack/MyHurtBox.gd" id="1_cx6q1"]
+[ext_resource type="Script" path="res://Scenes/Enemies/practice_enemy.gd" id="1_fcshn"]
+[ext_resource type="Texture2D" uid="uid://cl0gqvohrt4mk" path="res://Texture/Enemy/PracticeEnemy.png" id="2_wcc4b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvylm"]
+radius = 8.0
+
+[node name="PracticeEnemy" type="Node2D"]
+script = ExtResource("1_fcshn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wcc4b")
+
+[node name="MyHurtBox" type="Area2D" parent="Sprite2D"]
+script = ExtResource("1_cx6q1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/MyHurtBox"]
+shape = SubResource("CircleShape2D_tvylm")
