@@ -2,35 +2,16 @@
 
 [ext_resource type="Script" path="res://Scripts/Character/character.gd" id="1_jl5k1"]
 [ext_resource type="Texture2D" uid="uid://bgg3w5js5dfwg" path="res://Texture/Character/Mainchar1.png" id="1_rr23i"]
-[ext_resource type="Script" path="res://Resources/Dictionary/Stats.gd" id="2_wtt3t"]
-[ext_resource type="Script" path="res://Resources/Dictionary/DamageType.gd" id="3_nqhw4"]
+[ext_resource type="Script" path="res://Resources/Stats.gd" id="2_wtt3t"]
+[ext_resource type="Script" path="res://Resources/DamageType.gd" id="3_nqhw4"]
 [ext_resource type="Texture2D" uid="uid://dhkr6puvqjibf" path="res://Texture/Sword.png" id="4_myf4q"]
-[ext_resource type="Script" path="res://Resources/Dictionary/Dice.gd" id="4_snhtt"]
 [ext_resource type="Script" path="res://Scripts/Weapons/Weapons.gd" id="5_5hky7"]
+[ext_resource type="Script" path="res://Test/Dice.gd" id="6_rm21c"]
 [ext_resource type="Script" path="res://Scripts/Attack/MyHurtBox.gd" id="7_4aowr"]
 
 [sub_resource type="Resource" id="Resource_evvgi"]
 script = ExtResource("2_wtt3t")
 Name = ""
-CharStats = {
-"Acrobatics": 0,
-"Arcane": 0,
-"Athletics": 0,
-"Crafting": 0,
-"Deception": 0,
-"Diplomacy": 0,
-"Intimidation": 0,
-"Lore": [],
-"Medicine": 0,
-"Nature": 0,
-"Occultism": 0,
-"Performance": 0,
-"Religion": 0,
-"Society": 0,
-"Stealth": 0,
-"Survival": 0,
-"Thievery": 0
-}
 CircumstanceBonus = null
 ItemBonus = null
 StatusBonus = null
@@ -38,13 +19,6 @@ penalties = 0
 Max_health = 1
 Health = 1
 Speed = 0
-TrainedProficiency = {
-"Expert": false,
-"Legendary": false,
-"Master": false,
-"Trained": true,
-"Untrained": false
-}
 Level = 0
 Proficiency = null
 Strength = 10
@@ -81,14 +55,19 @@ PreciousMaterials = {
 "Silver": 0
 }
 
-[sub_resource type="Resource" id="Resource_xiuis"]
-script = ExtResource("4_snhtt")
-sides = 8
+[sub_resource type="Resource" id="Resource_5njk3"]
+script = ExtResource("6_rm21c")
+D20 = null
+D12 = null
+D10 = null
+D8 = 1
+D6 = null
+D4 = null
 
 [sub_resource type="Resource" id="Resource_x3el2"]
 script = ExtResource("5_5hky7")
 damage_type = SubResource("Resource_dnx1g")
-dice = SubResource("Resource_xiuis")
+weapon_damage_die = SubResource("Resource_5njk3")
 name = "Sword"
 texture = ExtResource("4_myf4q")
 icon = ExtResource("4_myf4q")

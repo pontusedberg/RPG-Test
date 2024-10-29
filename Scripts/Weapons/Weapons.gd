@@ -1,5 +1,8 @@
 extends Items
 class_name Weapons
 
-@export var damage_type : DamageType
-@export var weapon_damage_die: Dice
+@export var PotencyRune: Runes
+@export var attack: AttackTypes
+@export var damage_type: DamageType
+@export var dice: Dice
+@export var material: PreciousMaterials 

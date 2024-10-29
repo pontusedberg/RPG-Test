@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bid43ol560slo" path="res://Texture/Character/Enemy1.png" id="1_ff2bd"]
 [ext_resource type="Script" path="res://Scenes/Enemies/enemy.gd" id="1_q1jia"]
-[ext_resource type="Script" path="res://Resources/Stats.gd" id="2_wi2ni"]
+[ext_resource type="Script" path="res://Resources/Dictionary/Stats.gd" id="2_wi2ni"]
 
 [sub_resource type="Resource" id="Resource_d6vio"]
 script = ExtResource("2_wi2ni")

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Weapons" load_steps=7 format=3 uid="uid://tn7avnnuqlcs"]
 
-[ext_resource type="Script" path="res://Resources/DamageType.gd" id="1_ruh6u"]
+[ext_resource type="Script" path="res://Resources/Dictionary/DamageType.gd" id="1_ruh6u"]
 [ext_resource type="Texture2D" uid="uid://dhkr6puvqjibf" path="res://Texture/Sword.png" id="2_yra04"]
 [ext_resource type="Script" path="res://Scripts/Weapons/Weapons.gd" id="3_8shsc"]
 [ext_resource type="Script" path="res://Test/Dice.gd" id="4_in1u3"]
