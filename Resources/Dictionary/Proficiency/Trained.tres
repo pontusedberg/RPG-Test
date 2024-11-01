@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="Proficiency" load_steps=2 format=3 uid="uid://mdu6ttb1k2su"]
+
+[ext_resource type="Script" path="res://Resources/Dictionary/Proficiency/Proficiency.gd" id="1_nn82w"]
+
+[resource]
+script = ExtResource("1_nn82w")
+ProficiencyDict = {
+"Expert": {
+"is_trained": false,
+"value": 4
+},
+"Legemdary": {
+"is_trained": false,
+"value": 8
+},
+"Master": {
+"is_trained": false,
+"value": 6
+},
+"Trained": {
+"is_trained": true,
+"value": 2
+},
+"Untrained": {
+"is_trained": false,
+"value": 0
+}
+}

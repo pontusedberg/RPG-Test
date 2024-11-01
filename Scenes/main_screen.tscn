@@ -16,9 +16,6 @@ script = ExtResource("1_wib7a")
 [node name="Wall1" parent="." instance=ExtResource("2_3euo0")]
 position = Vector2(349, 222)
 
-[node name="Character" parent="." instance=ExtResource("2_hgwqw")]
-position = Vector2(246, 114)
-
 [node name="Plate1" type="Area2D" parent="."]
 position = Vector2(488, 122)
 
@@ -48,6 +45,9 @@ position = Vector2(246, 136)
 
 [node name="PracticeEnemy" parent="." instance=ExtResource("5_8qmk1")]
 position = Vector2(320, 102)
+
+[node name="Character" parent="." instance=ExtResource("2_hgwqw")]
+position = Vector2(234, 99)
 
 [connection signal="body_entered" from="Plate1" to="." method="_on_plate_1_body_entered"]
 [connection signal="body_entered" from="Plate2" to="." method="_on_plate_2_body_entered"]

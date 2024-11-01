@@ -1,0 +1,151 @@
+[gd_resource type="Resource" script_class="Ancestry" load_steps=2 format=3 uid="uid://b7qdbskghin78"]
+
+[ext_resource type="Script" path="res://Resources/Ancestry/Ancestry.gd" id="1_6lq03"]
+
+[resource]
+script = ExtResource("1_6lq03")
+AbilityBoosts = [{
+"Proficiency": {
+"Expert": {
+"is_trained": false,
+"value": 4
+},
+"Legendary": {
+"is_trained": false,
+"value": 8
+},
+"Master": {
+"is_trained": false,
+"value": 6
+},
+"Trained": {
+"is_trained": false,
+"value": 2
+},
+"Untrained": {
+"is_trained": true,
+"value": 0
+}
+},
+"Strength": 0
+}, {
+"Dexterity": 0,
+"Proficiency": {
+"Expert": {
+"is_trained": false,
+"value": 4
+},
+"Legendary": {
+"is_trained": false,
+"value": 8
+},
+"Master": {
+"is_trained": false,
+"value": 6
+},
+"Trained": {
+"is_trained": false,
+"value": 2
+},
+"Untrained": {
+"is_trained": true,
+"value": 0
+}
+}
+}, {
+"Constitution": 0,
+"Proficiency": {
+"Expert": {
+"is_trained": false,
+"value": 4
+},
+"Legendary": {
+"is_trained": false,
+"value": 8
+},
+"Master": {
+"is_trained": false,
+"value": 6
+},
+"Trained": {
+"is_trained": false,
+"value": 2
+},
+"Untrained": {
+"is_trained": true,
+"value": 0
+}
+}
+}, {
+"Intelligence": 0,
+"Proficiency": {
+"Expert": {
+"is_trained": false,
+"value": 4
+},
+"Legendary": {
+"is_trained": false,
+"value": 8
+},
+"Master": {
+"is_trained": false,
+"value": 6
+},
+"Trained": {
+"is_trained": false,
+"value": 2
+},
+"Untrained": {
+"is_trained": true,
+"value": 0
+}
+}
+}, {
+"Proficiency": {
+"Expert": {
+"is_trained": false,
+"value": 4
+},
+"Legendary": {
+"is_trained": false,
+"value": 8
+},
+"Master": {
+"is_trained": false,
+"value": 6
+},
+"Trained": {
+"is_trained": false,
+"value": 2
+},
+"Untrained": {
+"is_trained": true,
+"value": 0
+}
+},
+"Wisdom": 0
+}, {
+"Charisma": 0,
+"Proficiency": {
+"Expert": {
+"is_trained": false,
+"value": 4
+},
+"Legendary": {
+"is_trained": false,
+"value": 8
+},
+"Master": {
+"is_trained": false,
+"value": 6
+},
+"Trained": {
+"is_trained": false,
+"value": 2
+},
+"Untrained": {
+"is_trained": true,
+"value": 0
+}
+}
+}]
