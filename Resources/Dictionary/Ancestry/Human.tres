@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ancestry" load_steps=2 format=3 uid="uid://cscht2fdr5125"]
+
+[ext_resource type="Script" path="res://Resources/Dictionary/Ancestry/Ancestry.gd" id="1_un4iv"]
+
+[resource]
+script = ExtResource("1_un4iv")
+description = ""
+hitpoints = 0
+size = ""
+ability_boosts_and_flaws = {}
+languages = []
+special = []

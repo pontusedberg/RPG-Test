@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Background" load_steps=3 format=3 uid="uid://nydy0e1h62bo"]
+
+[ext_resource type="Script" path="res://Resources/Dictionary/Proficiency.gd" id="1_ydvcq"]
+[ext_resource type="Script" path="res://Resources/Dictionary/Background/Background.gd" id="2_7yfs5"]
+
+[resource]
+script = ExtResource("2_7yfs5")
+description = ""
+hitpoints = 0
+size = ""
+ability_boosts_and_flaws = {}
+languages = []
+special = []
+proficiencies = Array[ExtResource("1_ydvcq")]([])

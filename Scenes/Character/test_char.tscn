@@ -2,11 +2,257 @@
 
 [ext_resource type="Script" path="res://Scenes/Character/test_char.gd" id="1_0f1jd"]
 [ext_resource type="Texture2D" uid="uid://bgg3w5js5dfwg" path="res://Texture/Character/Mainchar1.png" id="2_mtn2a"]
-[ext_resource type="Script" path="res://Resources/Dictionary/Stats.gd" id="2_w5tua"]
+[ext_resource type="Script" path="res://Resources/Dictionary/Stats/Stats.gd" id="2_w5tua"]
 [ext_resource type="Script" path="res://Scripts/Weapons/Weapons.gd" id="3_7u4i5"]
 
 [sub_resource type="Resource" id="Resource_wj44r"]
 script = ExtResource("2_w5tua")
+stats_dictionary1 = {
+"Acrobatics": 0,
+"Arcane": 0,
+"Athletics": 0,
+"Crafting": 0,
+"Deception": 0,
+"Diplomacy": 0,
+"Intimidation": 0,
+"Lore": [],
+"Medicine": 0,
+"Nature": 0,
+"Occultism": 0,
+"Performance": 0,
+"Religion": 0,
+"Society": 0,
+"Stealth": 0,
+"Survivial": 0,
+"Thievery": 0
+}
+stats_dictionary2 = {
+"Acrobatics": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Arcane": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Athletics": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Crafting": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Deception": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Diplomacy": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Lore": [],
+"Medicine": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Occultism": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Performance": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Religion": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Society": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Stealth": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Survivial": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}],
+"Thievery": [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}]
+}
 Name = ""
 CircumstanceBonus = null
 ItemBonus = null
@@ -15,6 +261,13 @@ penalties = 0
 Max_health = 1
 Health = 1
 Speed = 0
+TrainedProficiency = {
+"Expert": false,
+"Legendary": false,
+"Master": false,
+"Trained": false,
+"Untrained": true
+}
 Level = 0
 Proficiency = null
 Strength = 0
@@ -27,6 +280,25 @@ AC = null
 FortitudeDC = null
 ReflexDC = null
 WillDC = null
+ProficiencyDict = [{
+"is_trained": true,
+"value": 0
+}, {
+"is_trained": false,
+"value": 2
+}, {
+"is_trained": false,
+"value": 4
+}, {
+"is_trained": false,
+"value": 6
+}, {
+"is_trained": false,
+"value": 8
+}]
+test10 = {
+"Value": 8
+}
 
 [sub_resource type="Resource" id="Resource_si6ec"]
 script = ExtResource("3_7u4i5")

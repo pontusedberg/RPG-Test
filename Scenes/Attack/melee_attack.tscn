@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://byam16i64x85e"]
 
 [ext_resource type="Script" path="res://Scenes/Character/melee_attack.gd" id="1_woc74"]
-[ext_resource type="Script" path="res://Resources/Dictionary/Stats.gd" id="2_fadmr"]
+[ext_resource type="Script" path="res://Resources/Dictionary/Stats/Stats.gd" id="2_fadmr"]
 [ext_resource type="PackedScene" uid="uid://cpirkcndhuv4q" path="res://Scenes/wait_timer.tscn" id="4_26moo"]
 
 [sub_resource type="Resource" id="Resource_w5k5p"]

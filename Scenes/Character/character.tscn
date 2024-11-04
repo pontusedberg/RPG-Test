@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Character/character.gd" id="1_jl5k1"]
 [ext_resource type="Texture2D" uid="uid://bgg3w5js5dfwg" path="res://Texture/Character/Mainchar1.png" id="1_rr23i"]
-[ext_resource type="Script" path="res://Resources/Dictionary/Stats.gd" id="2_wtt3t"]
+[ext_resource type="Script" path="res://Resources/Dictionary/Stats/Stats.gd" id="2_wtt3t"]
 [ext_resource type="Script" path="res://Resources/Dictionary/DamageType.gd" id="3_nqhw4"]
 [ext_resource type="Texture2D" uid="uid://dhkr6puvqjibf" path="res://Texture/Sword.png" id="4_myf4q"]
 [ext_resource type="Script" path="res://Resources/Dictionary/Dice.gd" id="4_snhtt"]
@@ -11,33 +11,15 @@
 
 [sub_resource type="Resource" id="Resource_evvgi"]
 script = ExtResource("2_wtt3t")
-Name = ""
-CharStats = {
-"Acrobatics": 0,
-"Arcane": 0,
-"Athletics": 0,
-"Crafting": 0,
-"Deception": 0,
-"Diplomacy": 0,
-"Intimidation": 0,
-"Lore": [],
-"Medicine": 0,
-"Nature": 0,
-"Occultism": 0,
-"Performance": 0,
-"Religion": 0,
-"Society": 0,
-"Stealth": 0,
-"Survival": 0,
-"Thievery": 0
-}
+Name = null
+CharStats = null
 CircumstanceBonus = null
 ItemBonus = null
 StatusBonus = null
-penalties = 0
-Max_health = 1
-Health = 1
-Speed = 0
+penalties = null
+Max_health = null
+Health = null
+Speed = null
 TrainedProficiency = {
 "Expert": false,
 "Legendary": false,
@@ -45,14 +27,14 @@ TrainedProficiency = {
 "Trained": true,
 "Untrained": false
 }
-Level = 0
+Level = null
 Proficiency = null
 Strength = 10
-Dexterity = 0
-Constitution = 0
-Intelligence = 0
-Wisdom = 0
-Charisma = 0
+Dexterity = null
+Constitution = null
+Intelligence = null
+Wisdom = null
+Charisma = null
 AC = null
 FortitudeDC = null
 ReflexDC = null

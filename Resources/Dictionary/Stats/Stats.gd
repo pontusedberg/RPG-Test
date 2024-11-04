@@ -1,32 +1,110 @@
-extends Resource
+extends Proficiency
 class_name Stats
+
+
 
 func _ready() -> void:
 	GlobalScript.number
 
 var dice : Dice
 
-@export var Name: String
-@export var CharStats: Dictionary ={
-	
-	"Acrobatics": 0,
-	"Arcane": 0,
-	"Athletics": 0,
-	"Crafting": 0,
-	"Deception": 0,
-	"Diplomacy": 0,
-	"Intimidation": 0,
-	"Lore": [],
-	"Medicine": 0,
-	"Nature": 0,
-	"Occultism": 0,
-	"Performance": 0,
-	"Religion": 0,
-	"Society": 0,
-	"Stealth": 0,
-	"Survival": 0,
-	"Thievery": 0
+
+
+const ACROBATICS: String = "Acrobatics"
+const ATHLETICS: String = "Athletics"
+const ARCANE: String = "Arcane"
+const CRAFTING: String = "Crafting"
+const DECEPTION: String = "Deception"
+const DIPLOMACY: String = "Diplomacy"
+const INTIMIDATION: String = "Intimidation"
+const LORE: String = "Lore"
+const MEDICINE: String = "Medicine"
+const NATURE: String = "Nature"
+const OCCULTISM: String = "Occultism"
+const PERFORMANCE: String = "Performance"
+const RELIGION: String = "Religion"
+const STEALTH: String = "Stealth"
+const SOCIETY: String = "Society"
+const SURVIVIAL: String = "Survivial"
+const THIEVERY: String = "Thievery"
+
+const STATSARRAY: Array = [
+	ACROBATICS,
+	ATHLETICS,
+	ARCANE,
+	CRAFTING,
+	DECEPTION,
+	DIPLOMACY,
+	INTIMIDATION,
+	LORE,
+	MEDICINE,
+	NATURE,
+	OCCULTISM,
+	PERFORMANCE,
+	RELIGION,
+	STEALTH,
+	SOCIETY,
+	THIEVERY ]
+
+const STATSDICTIONARY: Dictionary = {
+	ACROBATICS:0,
+	ATHLETICS: 0,
+	ARCANE: 0,
+	CRAFTING: 0,
+	DECEPTION: 0,
+	DIPLOMACY: 0,
+	INTIMIDATION: 0,
+	LORE: [],
+	MEDICINE: 0,
+	NATURE: 0,
+	OCCULTISM: 0,
+	PERFORMANCE: 0,
+	RELIGION: 0,
+	STEALTH: 0,
+	SOCIETY: 0,
+	SURVIVIAL: 0,
+	THIEVERY: 0,
 }
+
+const TESTDICTIONARY2: Dictionary = {
+		ACROBATICS:PROFICIENCY_DICT,
+		ATHLETICS:PROFICIENCY_DICT,
+		ARCANE:PROFICIENCY_DICT,
+		CRAFTING:PROFICIENCY_DICT,
+		DECEPTION:PROFICIENCY_DICT,
+		DIPLOMACY:PROFICIENCY_DICT,
+		LORE:[],
+		MEDICINE:PROFICIENCY_DICT,
+		OCCULTISM:PROFICIENCY_DICT,
+		PERFORMANCE:PROFICIENCY_DICT,
+		RELIGION:PROFICIENCY_DICT,
+		STEALTH:PROFICIENCY_DICT,
+		SOCIETY:PROFICIENCY_DICT,
+		SURVIVIAL:PROFICIENCY_DICT,
+		THIEVERY:PROFICIENCY_DICT
+		
+}
+@export  var stats_dictionary1 = STATSDICTIONARY
+@export var stats_dictionary2 = TESTDICTIONARY2
+
+
+const test: Dictionary = {"Stat": STATSARRAY[0], "Is_trained": PROFICIENCY_DICT[0]}
+const test7: Dictionary = {
+	"Wood": 0,
+	"Stone": 0,
+	"Food": 0,	
+}
+const test8: Dictionary = {
+	"Value": 0, 
+	"True/false": false,
+	
+}
+
+
+@export var Name: String
+
+
+
 # Bonuses stored as arrays to allow for multiple bonuses
 @export var CircumstanceBonus: int  = get_highest_bonus(CircumstanceBonusArray)
 @export var ItemBonus: int = get_highest_bonus(ItemBonusArray)

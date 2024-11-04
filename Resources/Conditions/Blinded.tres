@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="CONDITIONS" load_steps=2 format=3 uid="uid://bgw6uaiajg1dx"]
+
+[ext_resource type="Script" path="res://Resources/Conditions/Conditions.gd" id="1_gyxas"]
+
+[resource]
+script = ExtResource("1_gyxas")
+Name = "Blinded"
+Description = "You're unable to see"

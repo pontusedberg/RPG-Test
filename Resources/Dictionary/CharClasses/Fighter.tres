@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharClass" load_steps=2 format=3 uid="uid://ncr05yyepvwk"]
+
+[ext_resource type="Script" path="res://Resources/Dictionary/CharClasses/Charclasses.gd" id="1_8660a"]
+
+[resource]
+script = ExtResource("1_8660a")
+description = ""
+key_ability = ""
+hitpoints = 0
+perception = ""
+saving_throws = {}
+skills = {}
+attacks = {}
+defenses = {}
+proficiency_levels = Array[bool]([true, false, false, false, false])
