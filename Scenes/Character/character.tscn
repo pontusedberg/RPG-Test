@@ -1,0 +1,173 @@
+[gd_scene load_steps=25 format=3 uid="uid://ou2tiigwlbxd"]
+
+[ext_resource type="Script" path="res://Scripts/Character/character.gd" id="1_jl5k1"]
+[ext_resource type="Texture2D" uid="uid://bgg3w5js5dfwg" path="res://Texture/Character/Mainchar1.png" id="1_rr23i"]
+[ext_resource type="Script" path="res://Resources/Character/CharStats/CharStats.gd" id="2_n6qbq"]
+[ext_resource type="Script" path="res://Resources/AttackTypes/DamageType.gd" id="3_nqhw4"]
+[ext_resource type="Script" path="res://Resources/Character/AbilityScores.gd" id="3_up7jf"]
+[ext_resource type="Script" path="res://Resources/Character/CharStats/Proficiency/Proficiency.gd" id="4_0mdb3"]
+[ext_resource type="Texture2D" uid="uid://dhkr6puvqjibf" path="res://Texture/Sword.png" id="4_myf4q"]
+[ext_resource type="Script" path="res://Resources/Dice.gd" id="4_snhtt"]
+[ext_resource type="Script" path="res://Resources/Items/Weapons/Weapons.gd" id="5_5hky7"]
+[ext_resource type="Script" path="res://Resources/Character/Ancestry/Ancestry.gd" id="5_i41br"]
+[ext_resource type="Script" path="res://Resources/Character/Background/Background.gd" id="6_yq2d4"]
+[ext_resource type="Script" path="res://Scripts/Attack/MyHurtBox.gd" id="7_4aowr"]
+[ext_resource type="Script" path="res://Resources/Character/CharClasses/CharClasses.gd" id="7_gmjnl"]
+
+[sub_resource type="Resource" id="Resource_3v2a4"]
+script = ExtResource("2_n6qbq")
+Speed = 300
+Health = 100
+Max_health = 100
+CircumstanceBonusArray = []
+ItemBonusArray = []
+StatusBonusArray = []
+
+[sub_resource type="Resource" id="Resource_x2d6p"]
+script = ExtResource("3_up7jf")
+AbilityScores_Dict = {
+"Charisma": 0,
+"Constitution": 0,
+"Dexterity": 0,
+"Intelligence": 0,
+"Strength": 0,
+"Wisdom": 0
+}
+ProficiencyDict = {
+"Expert": {
+"is_trained": true,
+"value": 4
+},
+"Legendary": {
+"is_trained": true,
+"value": 8
+},
+"Master": {
+"is_trained": true,
+"value": 6
+},
+"Trained": {
+"is_trained": true,
+"value": 2
+},
+"Untrained": {
+"is_trained": false,
+"value": 0
+}
+}
+
+[sub_resource type="Resource" id="Resource_00ni3"]
+script = ExtResource("4_0mdb3")
+ProficiencyDict = {
+"Expert": {
+"is_trained": true,
+"value": 4
+},
+"Legendary": {
+"is_trained": true,
+"value": 8
+},
+"Master": {
+"is_trained": true,
+"value": 6
+},
+"Trained": {
+"is_trained": true,
+"value": 2
+},
+"Untrained": {
+"is_trained": false,
+"value": 0
+}
+}
+
+[sub_resource type="Resource" id="Resource_18hor"]
+script = ExtResource("5_i41br")
+name = ""
+attribute_boosts = []
+attribute_flaw = ""
+hit_points = 0
+size = 0
+speed = 0
+
+[sub_resource type="Resource" id="Resource_n46w8"]
+script = ExtResource("6_yq2d4")
+name = ""
+attribute_boosts = []
+
+[sub_resource type="Resource" id="Resource_i7cij"]
+script = ExtResource("7_gmjnl")
+name = ""
+key_attribute = ""
+
+[sub_resource type="Resource" id="Resource_dnx1g"]
+script = ExtResource("3_nqhw4")
+damage_types = {
+"Acid": 0,
+"Bludgeoning": 1,
+"Cold": 0,
+"Electricity": 0,
+"Fire": 0,
+"Piercing": 0,
+"Slashing": 0,
+"Sonic": 0
+}
+PhysicalDamage = []
+EnergyDamage = []
+SpiritDamage = false
+MentalDamage = false
+PoisonDamage = false
+BleedDamage = 0
+PrecisionDamage = 0
+PreciousMaterials = {
+"Silver": 0
+}
+
+[sub_resource type="Resource" id="Resource_xiuis"]
+script = ExtResource("4_snhtt")
+sides = 8
+
+[sub_resource type="Resource" id="Resource_x3el2"]
+script = ExtResource("5_5hky7")
+damage_type = SubResource("Resource_dnx1g")
+dice = SubResource("Resource_xiuis")
+name = "Sword"
+texture = ExtResource("4_myf4q")
+icon = ExtResource("4_myf4q")
+projectile = 0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kapju"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gntqf"]
+
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("progress_bar", "hurtbox")]
+motion_mode = 1
+script = ExtResource("1_jl5k1")
+stats = SubResource("Resource_3v2a4")
+abilityscores = SubResource("Resource_x2d6p")
+proficiency = SubResource("Resource_00ni3")
+ancestry = SubResource("Resource_18hor")
+background = SubResource("Resource_n46w8")
+charclass = SubResource("Resource_i7cij")
+current_weapon = SubResource("Resource_x3el2")
+progress_bar = NodePath("ProgressBar")
+hurtbox = NodePath("MyHurtBox/CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kapju")
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rr23i")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="MyHurtBox" type="Area2D" parent="."]
+script = ExtResource("7_4aowr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MyHurtBox"]
+shape = SubResource("CircleShape2D_gntqf")

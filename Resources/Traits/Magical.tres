@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TRAITS" load_steps=2 format=3 uid="uid://0lxur3gmldjt"]
+
+[ext_resource type="Script" path="res://Resources/Traits/Traits.gd" id="1_mg58r"]
+
+[resource]
+script = ExtResource("1_mg58r")
+Name = "Magical"
+Description = "Something with the magical trait is imbued with magical energies not tied to a specific tradition of magic. Some items or effects are closely tied to a particular tradition of magic. In these cases, the item has the arcane, divine, occult, or primal trait instead of the magical trait. Any of these traits indicate that the item is magical."
+Rarity = ""
+Level = 0
+Price = 0
+Bulk = 0

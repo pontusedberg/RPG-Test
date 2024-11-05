@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdklejtmqto8s"]
+
+[ext_resource type="Script" path="res://Scenes/Character/control.gd" id="1_gxk0l"]
+
+[node name="CharMaker" type="Node2D"]
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+
+[node name="Control" type="Control" parent="CanvasGroup" node_paths=PackedStringArray("my_label")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_gxk0l")
+my_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="CanvasGroup/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="MenuBar" type="MenuBar" parent="CanvasGroup/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="Chararcterstats" load_steps=2 format=3 uid="uid://cahb36y5r68ll"]
+
+[ext_resource type="Script" path="res://Resources/Character/CharStats/CharacterAtributes.gd" id="1_ietjx"]
+
+[resource]
+script = ExtResource("1_ietjx")
+CharStats_Dict = {
+"Acrobatics": {
+"Acrobatics": 0
+},
+"Arcane": {
+"Arcane": 0
+},
+"Athletics": {
+"Athletics": 0
+},
+"Crafting": {
+"Crafting": 0
+},
+"Deception": {
+"Deception": 0
+},
+"Diplomacy": {
+"Diplomacy": 0
+},
+"Intimidation": {
+"Intimidation": 0
+},
+"Lore": {
+"Lore": []
+},
+"Medicine": {
+"Medicine": 0
+},
+"Nature": {
+"Nature": 0
+},
+"Occultism": {
+"Occultism": 0
+},
+"Performance": {
+"Performance": 0
+},
+"Religion": {
+"Religion": 0
+},
+"Society": {
+"Society": 0
+},
+"Stealth": {
+"Stealth": 0
+},
+"Survival": {
+"Survival": 0
+},
+"THIEVERY": {
+"Thievery": 0
+}
+}

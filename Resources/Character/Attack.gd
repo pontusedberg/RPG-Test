@@ -4,6 +4,7 @@ var dice : Dice
 var character : Character
 var stats : Stats
 
+
 # Function to get the highest of multiple bonuses (since same type bonuses don't stack)
 func get_highest_bonus(bonuses: Array) -> int:
 	if bonuses.size() > 0:

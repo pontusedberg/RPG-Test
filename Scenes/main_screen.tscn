@@ -1,12 +1,60 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8ral1bg43h6o"]
+[gd_scene load_steps=8 format=3 uid="uid://b8ral1bg43h6o"]
 
+[ext_resource type="Script" path="res://Scenes/World.gd" id="1_wib7a"]
 [ext_resource type="PackedScene" uid="uid://ck2h65hce4hbg" path="res://Scenes/wall_1.tscn" id="2_3euo0"]
-[ext_resource type="PackedScene" uid="uid://ou2tiigwlbxd" path="res://Scenes/character.tscn" id="2_hgwqw"]
+[ext_resource type="PackedScene" uid="uid://ou2tiigwlbxd" path="res://Scenes/Character/character.tscn" id="2_hgwqw"]
+[ext_resource type="PackedScene" uid="uid://boem0bgk7pofy" path="res://Scenes/Enemies/Enemy.tscn" id="4_sv7hn"]
+[ext_resource type="PackedScene" uid="uid://d6qyrowl8d3o" path="res://Scenes/Enemies/PracticeEnemy.tscn" id="5_8qmk1"]
+[ext_resource type="PackedScene" uid="uid://no5lj66iw7a3" path="res://Scenes/UI/Inventoryl.tscn" id="6_g3c1f"]
 
-[node name="MainScreen" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suy3l"]
+size = Vector2(40, 40)
+
+[node name="World" type="Node2D"]
 position = Vector2(0, 1)
+script = ExtResource("1_wib7a")
 
 [node name="Wall1" parent="." instance=ExtResource("2_3euo0")]
 position = Vector2(349, 222)
 
+[node name="Plate1" type="Area2D" parent="."]
+position = Vector2(488, 122)
+
+[node name="ColorRect" type="ColorRect" parent="Plate1"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.4, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate1"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_suy3l")
+
+[node name="Plate2" type="Area2D" parent="."]
+position = Vector2(301, 121)
+
+[node name="ColorRect" type="ColorRect" parent="Plate2"]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate2"]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_suy3l")
+
+[node name="Enemy" parent="." instance=ExtResource("4_sv7hn")]
+position = Vector2(246, 136)
+
+[node name="PracticeEnemy" parent="." instance=ExtResource("5_8qmk1")]
+position = Vector2(320, 102)
+
 [node name="Character" parent="." instance=ExtResource("2_hgwqw")]
+position = Vector2(234, 99)
+
+[node name="Inventory" parent="." instance=ExtResource("6_g3c1f")]
+offset_left = 897.0
+offset_top = 318.0
+offset_right = 897.0
+offset_bottom = 318.0
+
+[connection signal="body_entered" from="Plate1" to="." method="_on_plate_1_body_entered"]
+[connection signal="body_entered" from="Plate2" to="." method="_on_plate_2_body_entered"]
