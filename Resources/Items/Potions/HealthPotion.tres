@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="POTIONS" load_steps=2 format=3 uid="uid://dfx4va80sf52g"]
+
+[ext_resource type="Script" path="res://Resources/Items/Potions/Potions.gd" id="1_gohu6"]
+
+[resource]
+script = ExtResource("1_gohu6")
+Name = "HealthPotion"
+Description = "Does Healing"
+Rarity = ""
+Trait = [null, null]
+Level = 0
+Price = 0
+Bulk = 0

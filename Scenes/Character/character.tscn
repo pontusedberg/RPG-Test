@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://Scripts/Character/character.gd" id="1_jl5k1"]
 [ext_resource type="Texture2D" uid="uid://bgg3w5js5dfwg" path="res://Texture/Character/Mainchar1.png" id="1_rr23i"]
-[ext_resource type="Script" path="res://Resources/Dictionary/Stats.gd" id="2_n6qbq"]
-[ext_resource type="Script" path="res://Resources/Dictionary/DamageType.gd" id="3_nqhw4"]
-[ext_resource type="Script" path="res://Resources/Dictionary/CharStats/AbilityScores.gd" id="3_up7jf"]
-[ext_resource type="Script" path="res://Resources/Dictionary/Proficiency/Proficiency.gd" id="4_0mdb3"]
+[ext_resource type="Script" path="res://Resources/Character/CharStats/CharStats.gd" id="2_n6qbq"]
+[ext_resource type="Script" path="res://Resources/AttackTypes/DamageType.gd" id="3_nqhw4"]
+[ext_resource type="Script" path="res://Resources/Character/AbilityScores.gd" id="3_up7jf"]
+[ext_resource type="Script" path="res://Resources/Character/CharStats/Proficiency/Proficiency.gd" id="4_0mdb3"]
 [ext_resource type="Texture2D" uid="uid://dhkr6puvqjibf" path="res://Texture/Sword.png" id="4_myf4q"]
-[ext_resource type="Script" path="res://Resources/Dictionary/Dice.gd" id="4_snhtt"]
-[ext_resource type="Script" path="res://Scripts/Weapons/Weapons.gd" id="5_5hky7"]
-[ext_resource type="Script" path="res://Resources/Ancestry/Ancestry.gd" id="5_i41br"]
-[ext_resource type="Script" path="res://Resources/Background/Background.gd" id="6_yq2d4"]
+[ext_resource type="Script" path="res://Resources/Dice.gd" id="4_snhtt"]
+[ext_resource type="Script" path="res://Resources/Items/Weapons/Weapons.gd" id="5_5hky7"]
+[ext_resource type="Script" path="res://Resources/Character/Ancestry/Ancestry.gd" id="5_i41br"]
+[ext_resource type="Script" path="res://Resources/Character/Background/Background.gd" id="6_yq2d4"]
 [ext_resource type="Script" path="res://Scripts/Attack/MyHurtBox.gd" id="7_4aowr"]
-[ext_resource type="Script" path="res://Resources/CharClasses/CharClasses.gd" id="7_gmjnl"]
+[ext_resource type="Script" path="res://Resources/Character/CharClasses/CharClasses.gd" id="7_gmjnl"]
 
 [sub_resource type="Resource" id="Resource_3v2a4"]
 script = ExtResource("2_n6qbq")
@@ -150,9 +150,9 @@ proficiency = SubResource("Resource_00ni3")
 ancestry = SubResource("Resource_18hor")
 background = SubResource("Resource_n46w8")
 charclass = SubResource("Resource_i7cij")
+current_weapon = SubResource("Resource_x3el2")
 progress_bar = NodePath("ProgressBar")
 hurtbox = NodePath("MyHurtBox/CollisionShape2D")
-current_weapon = SubResource("Resource_x3el2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kapju")

@@ -1,11 +1,12 @@
 extends CharacterBody2D
 class_name Character
-@export var stats: Stats
+
 @export var abilityscores: AbilityScores
 @export var proficiency: Proficiency
 @export var ancestry: Ancestry
 @export var background: Background
 @export var charclass: CharClass
+@export var stats: Stats
 
 @export var progress_bar: ProgressBar
 @export var hurtbox: CollisionShape2D
@@ -33,7 +34,6 @@ func _physics_process(delta: float) -> void:
 
 func character_movement() -> void:
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-
 	if direction != Vector2.ZERO:
 		velocity = direction * stats.Speed
 		move_and_slide()

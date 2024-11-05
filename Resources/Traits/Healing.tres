@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TRAITS" load_steps=2 format=3 uid="uid://dn1r3yy1t3a02"]
+
+[ext_resource type="Script" path="res://Resources/Traits/Traits.gd" id="1_yda4n"]
+
+[resource]
+script = ExtResource("1_yda4n")
+Name = "Healing"
+Description = "A healing effect restores a creature’s body, typically by restoring Hit Points, but sometimes by removing diseases or other debilitating effects."
+Rarity = ""
+Level = 0
+Price = 0
+Bulk = 0
