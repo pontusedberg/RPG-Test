@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://Scripts/Character/character.gd" id="1_jl5k1"]
 [ext_resource type="Texture2D" uid="uid://bgg3w5js5dfwg" path="res://Texture/Character/Mainchar1.png" id="1_rr23i"]
-[ext_resource type="Script" path="res://Resources/Dictionary/Stats/Stats.gd" id="2_wtt3t"]
-[ext_resource type="Script" path="res://Resources/Dictionary/DamageType.gd" id="3_nqhw4"]
+[ext_resource type="Script" path="res://Resources/Character/Stats/Reflex.gd" id="2_wtt3t"]
+[ext_resource type="Script" path="res://Resources/Character/Stats/Attacks/DamageType.gd" id="3_nqhw4"]
 [ext_resource type="Texture2D" uid="uid://dhkr6puvqjibf" path="res://Texture/Sword.png" id="4_myf4q"]
-[ext_resource type="Script" path="res://Resources/Dictionary/Dice.gd" id="4_snhtt"]
+[ext_resource type="Script" path="res://Resources/Dice.gd" id="4_snhtt"]
 [ext_resource type="Script" path="res://Scripts/Weapons/Weapons.gd" id="5_5hky7"]
 [ext_resource type="Script" path="res://Scripts/Attack/MyHurtBox.gd" id="7_4aowr"]
 
@@ -85,9 +85,9 @@ radius = 8.0
 motion_mode = 1
 script = ExtResource("1_jl5k1")
 stats = SubResource("Resource_evvgi")
+current_weapon = SubResource("Resource_x3el2")
 progress_bar = NodePath("ProgressBar")
 hurtbox = NodePath("MyHurtBox/CollisionShape2D")
-current_weapon = SubResource("Resource_x3el2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kapju")

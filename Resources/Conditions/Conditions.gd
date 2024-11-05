@@ -8,22 +8,19 @@ const NAME: String = ""
 const DESCRIPTION: String = ""
 
 class CONDITION:
+	#StateMachine
 	func Condition():
 		pass
 	#Stuff the class in the condition brackets ()
 	#FIND THE CLASS IN THE ARRAY
 	#Find the function in the class
 	#Apply the Class-Function onto token
-const Condition_Array: Array = [
-	BLINDED,BROKEN
-]
 
 class BLINDED:
 	func Blinded_Condition():
 		
 		pass
 	pass
-
 
 class BROKEN:
 	func Broken_Condition():
@@ -53,6 +50,7 @@ class DAZLED:
 class DEAFENED:
 	func Deafened_Condition():
 		pass
+		
 class DOOMED:
 	func Doomed_Condition():
 		pass
@@ -117,7 +115,6 @@ class INDIFFERENT:
 	func Indifferent_Condition():
 		pass
 	
-
 class INVISIBLE:
 	func Invisible_Condition():
 		pass
@@ -145,7 +142,6 @@ class PETRIFIED:
 class PRONE:
 	func Prone_Condition():
 		pass
-
 
 class QUICKENED:
 	func Quickened_Condition():

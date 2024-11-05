@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="Proficiency" load_steps=2 format=3 uid="uid://ptvevu8i1p3"]
-
-[ext_resource type="Script" path="res://Resources/Dictionary/Proficiency.gd" id="1_k0kx4"]
-
-[resource]
-script = ExtResource("1_k0kx4")
-proficiency_levels = Array[bool]([true, false, false, false, false])

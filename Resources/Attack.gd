@@ -2,7 +2,7 @@ extends Resource
 class_name Attack
 var dice : Dice
 var character : Character
-var stats : Stats
+
 
 
 # Function to get the highest of multiple bonuses (since same type bonuses don't stack)

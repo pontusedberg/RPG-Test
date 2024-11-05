@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Proficiency" load_steps=2 format=3 uid="uid://bsjnllp4ubq6a"]
 
-[ext_resource type="Script" path="res://Resources/Dictionary/Proficiency.gd" id="1_pa7ju"]
+[ext_resource type="Script" path="res://Resources/Character/Stats/PROFICIENCY/Proficiency.gd" id="1_pa7ju"]
 
 [resource]
 script = ExtResource("1_pa7ju")
